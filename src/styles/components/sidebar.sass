@@ -1,0 +1,41 @@
+@use '../variables'
+@use '../mixins'
+
+#sidebar
+    background-color: variables.$body-bg-color
+    flex: 1 1 0
+    border-radius: variables.$container-border-radius
+    display: flex
+    align-items: center
+    text-align: center
+    flex-direction: column
+    position: relative
+    padding: 3rem 0
+
+
+    img
+        max-width: 40%
+        border-radius: variables.$container-border-radius
+        position: absolute
+        top: -3rem
+
+    .title
+        color: variables.$text-color-secondary
+        background-color: variables.$bg-color-secondary
+        border-radius: variables.$card-border-radius
+        margin-top: 12rem
+        padding: .8rem 1.2rem
+
+    .btn
+        background-color: #007bff // Cor de fundo do botão
+        color: #fff // Cor do texto do botão
+        padding: 10px 20px // Espaçamento interno do botão
+        text-decoration: none // Remova sublinhado padrão
+        border-radius: 5px // Borda arredondada
+        display: inline-block
+        transition: background-color 0.3s ease-in-out
+
+        &:hover
+            background: variables.$gradient // Adicione a propriedade correta para a transição
+
+        

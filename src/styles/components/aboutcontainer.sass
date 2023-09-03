@@ -1,0 +1,11 @@
+@use '../variables'
+@use '../mixins'
+
+#about-container
+    @include mixins.center
+    flex-direction: column
+    padding: 1rem
+    background-color: variables.$bg-color-secondary
+    border-radius: variables.$container-border-radius
+    margin-bottom: 2rem
+    text-align: left
