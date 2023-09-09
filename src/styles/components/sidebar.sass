@@ -1,14 +1,18 @@
 @use '../variables'
 @use '../mixins'
+    
+// Defina uma variável para a largura do sidebar
+$sidebar-width: 250px
 
+// Estilo para o sidebar (para telas maiores)
 #sidebar
-    flex: 1 1 0
     background-color: variables.$body-bg-color
     border-radius: variables.$container-border-radius
     padding: 3rem 0
     position: fixed
-    top: -25
-    left: 3
+    top: 0
+    left: 0
+    width: $sidebar-width
     height: 100%
     overflow-y: auto
     z-index: 2
@@ -27,15 +31,23 @@
         padding: .8rem 1.2rem
 
     .btn
-        background-color: #007bff // Cor de fundo do botão
-        color: #fff // Cor do texto do botão
-        padding: 10px 20px // Espaçamento interno do botão
-        text-decoration: none // Remova sublinhado padrão
-        border-radius: 5px // Borda arredondada
+        background-color: #007bff
+        color: #fff
+        padding: 10px 20px
+        text-decoration: none
+        border-radius: 5px
         display: inline-block
         transition: background-color 0.3s ease-in-out
 
         &:hover
-            background: variables.$gradient // Adicione a propriedade correta para a transição
+            background: variables.$gradient
 
-        
+// Adicione regras de responsividade para telas menores
+@media (max-width: 768px) 
+    #sidebar 
+        width: 100% // Ocupa a largura total da tela
+        position: static // Remove a fixação
+        height: auto // Altura automática
+    
+    #main-content 
+        margin-left: 0 // Remove a margem à esquerda
